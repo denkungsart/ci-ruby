@@ -20,7 +20,7 @@ pdftk 2.0.2 installed from official debian repository.
 
 #### ffprobe
 
-ffprobe version N-51558-g3e1724b static binary for amd64 extracted from [ffmpeg static binary package](http://johnvansickle.com/ffmpeg/).
+ffprobe version 2.8.3 static binary for amd64 extracted from [ffmpeg static binary package](http://johnvansickle.com/ffmpeg/).
 
 #### postgresql-client
 
