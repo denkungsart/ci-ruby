@@ -1,27 +1,22 @@
-### Docker image for Drone CI
+## How to build this image
 
-Container for Drone CI testing based on [Dockerfile](https://github.com/docker-library/ruby/blob/74ee8aec9c17ea2134db8a8ef199cf092c829576/2.1/Dockerfile) from official Ruby repository. Supplemented with Node.js, PhantomJS, wkhtmltopdf, pdftk, ffprobe and postgresql-client.
+* Builds will happen automatically on pushes
+* The Dockerfile is expected to be located at the root folder
+* Docker tag names will be the same as the name of the branch
+* Use the supplied build shell script to build an image locally
+
+## Included dependencies
 
 #### Node.js
 
-node.js binary distribution for amd64 obtained from [official repository](https://github.com/nodesource/distributions).
+Node.js 8 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). You can install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 7.x`.
 
 #### PhantomJS
 
-Static PhantomJS 1.9.8 binary obtained from [https://bitbucket.org/ariya/phantomjs/downloads](https://bitbucket.org/ariya/phantomjs/downloads).
+PhantomJS 2.1.1 static binary obtained from [https://bitbucket.org/ariya/phantomjs/downloads](https://bitbucket.org/ariya/phantomjs/downloads) will be install at `/usr/local/bin/`. You can install a different version by declaring it in the Dockerfile before the install-phantomjs script is called, e.g. `ENV PHANTOMJS_VERSION 1.9.8`.
 
-#### wkhtmltopdf
+#### Google Chrome
 
-Static wkhtmltopdf 0.12.2.1 binary for amd64 extracted from [official Debian Jessie package](http://wkhtmltopdf.org/downloads.html).
-
-#### pdftk
-
-pdftk 2.0.2 installed from official debian repository.
-
-#### ffprobe
-
-ffprobe version N-51558-g3e1724b static binary for amd64 extracted from [ffmpeg static binary package](http://johnvansickle.com/ffmpeg/).
-
-#### postgresql-client
-
-postgresql-client 9.4 installed from official debian repository.
+* The currently available version for the Google Chrome stable package can be found [in the Google Chrome PPA list](https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable). Note that the build **will fail** if the supplied `CHROME_VERSION` in Dockerfile does not correspond w/ the latest version in this list.
+* To prevent an issue where Chrome tests fail to start in an unprivileged docker container the sandbox feature of Chrome is turned off by default.
+* A list w/ available versions of Chrome WebDriver can be found [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). Ensure the version used is compatible w/ the Google Chrome version.

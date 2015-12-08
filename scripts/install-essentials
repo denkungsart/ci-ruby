@@ -1,0 +1,14 @@
+#!/bin/bash
+set -xeo pipefail
+
+apt-get update
+apt-get install -y postgresql-client \
+    unzip
+
+# cmake required for building of libgit2 and pronto
+apt-get install -y cmake
+
+# Watermarking dependencies for pdf files
+apt-get install -y \
+    pdftk \
+    ghostscript

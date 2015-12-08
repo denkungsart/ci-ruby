@@ -1,0 +1,21 @@
+#!/bin/bash
+set -xeo pipefail
+
+CHROME_VERSION=${1:-62.0.3202.62-1}
+
+curl -sS -L https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
+
+apt-get update -q
+env DEBIAN_FRONTEND="noninteractive" apt-get install -y google-chrome-stable=$CHROME_VERSION
+
+# disable sandbox feature by default to prevent an issue where Chrome tests fail to start in an unprivileged docker container, ref https://discuss.circleci.com/t/running-browser-tests/10998/7
+sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox --no-sandbox|g' \
+  "/opt/google/chrome/google-chrome"
+
+rm -rf /var/lib/apt/lists/*
+
+# Install ChromeDriver
+wget -q https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip -d /usr/local/bin
+rm -f chromedriver_linux64.zip
