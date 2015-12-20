@@ -5,5 +5,8 @@
 # set -o pipefail: prevent errors in a pipeline from being masked
 set -euo pipefail
 
-NAME=aventurini/ci-ruby:2.1-dev
-docker build -t $NAME .
+TAG=2.1.8
+NAME=aventurini/ci-ruby:"$TAG"
+
+docker build -t "$NAME" .
+docker push "$NAME"

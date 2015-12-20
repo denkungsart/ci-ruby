@@ -1,4 +1,4 @@
-FROM ruby:2.1
+FROM ruby:2.1.8
 
 # Node.js
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash -
