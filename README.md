@@ -1,6 +1,6 @@
 ### Docker image for Drone CI
 
-Container for Drone CI testing based on [Dockerfile](https://github.com/docker-library/ruby/blob/74ee8aec9c17ea2134db8a8ef199cf092c829576/2.1/Dockerfile) from official Ruby repository. Supplemented with Node.js, PhantomJS, wkhtmltopdf, pdftk, ffprobe and postgresql-client.
+Container for Drone CI testing based on Dockerfile from official Ruby repository. Supplemented with Node.js, PhantomJS, wkhtmltopdf, pdftk, ffprobe and postgresql-client.
 
 #### Node.js
 
@@ -20,7 +20,7 @@ pdftk 2.0.2 installed from official debian repository.
 
 #### ffprobe
 
-ffprobe version N-51558-g3e1724b static binary for amd64 extracted from [ffmpeg static binary package](http://johnvansickle.com/ffmpeg/).
+ffprobe version 2.8.3 static binary for amd64 extracted from [ffmpeg static binary package](http://johnvansickle.com/ffmpeg/).
 
 #### postgresql-client
 

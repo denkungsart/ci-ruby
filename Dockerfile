@@ -1,4 +1,4 @@
-FROM ruby:2.1
+FROM ruby:2.0.0-p648
 
 # Node.js
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash -
@@ -25,12 +25,12 @@ RUN apt-get install -y pdftk \
     && ln -s /usr/bin/pdftk /usr/local/bin/pdftk
 
 # ffprobe
-ENV FFMPEG_GIT_BUILD 20151206
+ENV FFMPEG_VERSION 2.8.3
 
 RUN apt-get install -y xz-utils
-RUN curl -fSL http://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz -o /tmp/ffmpeg-release-64bit-static.tar.xz \
+RUN curl -fSL http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -o /tmp/ffmpeg-release-64bit-static.tar.xz \
     && tar -xJf /tmp/ffmpeg-release-64bit-static.tar.xz -C /tmp \
-    && mv /tmp/ffmpeg-git-"$FFMPEG_GIT_BUILD"-64bit-static/ffprobe /var/ffprobe \
+    && mv /tmp/ffmpeg-"$FFMPEG_VERSION"-64bit-static/ffprobe /var/ffprobe \
     && ln -s /var/ffprobe /usr/local/bin/ffprobe
 
 # PostgreSQL client
