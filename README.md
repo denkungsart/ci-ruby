@@ -1,6 +1,6 @@
 ### Docker image for Drone CI
 
-Container for Drone CI testing based on [Dockerfile](https://github.com/docker-library/ruby/blob/74ee8aec9c17ea2134db8a8ef199cf092c829576/2.1/Dockerfile) from official Ruby repository. Supplemented with Node.js, PhantomJS, wkhtmltopdf, pdftk, ffprobe and postgresql-client.
+Container for Drone CI testing based on [Dockerfile](https://github.com/docker-library/ruby) from official Ruby repository. Supplemented with Node.js, PhantomJS, wkhtmltopdf, pdftk, ffprobe and postgresql-client.
 
 #### Node.js
 
