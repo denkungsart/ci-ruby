@@ -1,4 +1,4 @@
-FROM ruby:2.0.0-p648
+FROM ruby:2.3
 
 # Node.js
 RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash -
@@ -25,7 +25,7 @@ RUN apt-get install -y pdftk \
     && ln -s /usr/bin/pdftk /usr/local/bin/pdftk
 
 # ffprobe
-ENV FFMPEG_VERSION 2.8.3
+ENV FFMPEG_VERSION 2.8.5
 
 RUN apt-get install -y xz-utils
 RUN curl -fSL http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -o /tmp/ffmpeg-release-64bit-static.tar.xz \

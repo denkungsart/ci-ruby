@@ -1,1 +1,6 @@
+v 2
+  - Update FFmpeg to 2.8.5
+  - Add image for ruby 2.3
+  - Remove docker push statement from build bash script
+
 v 1 (initial release)
