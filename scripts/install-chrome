@@ -2,6 +2,7 @@
 set -xeo pipefail
 
 CHROME_VERSION=${1:-62.0.3202.62-1}
+CHROME_DRIVER_VERSION=${2:-2.35}
 
 curl -sS -L https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
@@ -16,6 +17,6 @@ sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox --no-sandbox|g' \
 rm -rf /var/lib/apt/lists/*
 
 # Install ChromeDriver
-wget -q https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
+wget -q "https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
 unzip chromedriver_linux64.zip -d /usr/local/bin
 rm -f chromedriver_linux64.zip
