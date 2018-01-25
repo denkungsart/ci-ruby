@@ -7,10 +7,6 @@ RUN /tmp/install-essentials
 COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
-# PhantomJS
-COPY scripts/install-phantomjs /tmp/install-phantomjs
-RUN /tmp/install-phantomjs && phantomjs --version
-
 # Chrome
 ENV CHROME_VERSION 64.0.3282.119-1
 ENV CHROME_DRIVER_VERSION 2.35
