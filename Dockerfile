@@ -13,6 +13,10 @@ ENV CHROME_DRIVER_VERSION 2.35
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
+# Yarn
+COPY scripts/install-yarn /tmp/install-yarn
+RUN /tmp/install-yarn && yarn --version
+
 # Linter dependencies
 RUN gem install bundler-audit \
   && gem install pronto \
