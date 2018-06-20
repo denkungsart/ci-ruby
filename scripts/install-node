@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xeo pipefail
 
-NODE_VERSION=${1:-8.x}
+NODE_VERSION=${1:-10.x}
 
 # add official debian repos for node
 curl -sS -L https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
