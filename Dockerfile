@@ -1,4 +1,4 @@
-FROM ruby:2.4.4
+FROM ruby:2.5.1
 
 COPY scripts/install-essentials /tmp/install-essentials
 RUN /tmp/install-essentials
