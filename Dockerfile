@@ -12,8 +12,8 @@ COPY scripts/install-phantomjs /tmp/install-phantomjs
 RUN /tmp/install-phantomjs && phantomjs --version
 
 # Chrome
-ENV CHROME_VERSION 67.0.3396.87-1
-ENV CHROME_DRIVER_VERSION 2.40
+ENV CHROME_VERSION 69.0.3497.100-1
+ENV CHROME_DRIVER_VERSION 2.42
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
