@@ -9,7 +9,7 @@
 
 #### Node.js
 
-Node.js 8 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). You can install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 7.x`.
+Node.js 10 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). You can install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 7.x`.
 
 #### PhantomJS
 

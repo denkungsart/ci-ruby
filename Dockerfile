@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.5.2
 
 COPY scripts/install-essentials /tmp/install-essentials
 RUN /tmp/install-essentials
@@ -12,8 +12,8 @@ COPY scripts/install-phantomjs /tmp/install-phantomjs
 RUN /tmp/install-phantomjs && phantomjs --version
 
 # Chrome
-ENV CHROME_VERSION 69.0.3497.100-1
-ENV CHROME_DRIVER_VERSION 2.42
+ENV CHROME_VERSION 70.0.3538.67-1
+ENV CHROME_DRIVER_VERSION 2.43
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
