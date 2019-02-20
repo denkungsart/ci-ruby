@@ -23,12 +23,12 @@ RUN /tmp/install-yarn && yarn --version
 
 # Linter dependencies
 RUN gem install bundler-audit \
-  && gem install pronto \
-  && gem install pronto-brakeman \
-  && gem install pronto-coffeelint \
-  && gem install pronto-rubocop \
-  && gem install pronto-rails_schema \
-  && gem install pronto-scss
+  && gem install pronto -v 0.10.0 \
+  && gem install pronto-brakeman -v 0.10.0 \
+  # && gem install pronto-coffeelint \ TODO: not yet compatible w/ pronto 0.10
+  && gem install pronto-rubocop -v 0.10.0 \
+  # && gem install pronto-rails_schema \ TODO: not yet compatible w/ pronto 0.10
+  && gem install pronto-scss -v 0.10.0
 
 # Clean up apt and tmp folders
 RUN apt-get purge -y --auto-remove \
