@@ -5,7 +5,7 @@
 # set -o pipefail: prevent errors in a pipeline from being masked
 set -euo pipefail
 
-TAG=2.5.3-node-10.x-phantomjs-2.1-chrome-72.0-yarn
+TAG=2.5.3-node-10.x-phantomjs-2.1-chrome-72.0-yarn-wkhtmltopdf-0.12.5
 
 NAME=aventurini/ci-ruby:"$TAG"
 

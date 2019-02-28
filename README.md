@@ -20,3 +20,6 @@ PhantomJS 2.1.1 static binary obtained from [https://bitbucket.org/ariya/phantom
 * The currently available version for the Google Chrome stable package can be found [in the Google Chrome PPA list](https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable). Note that the build **will fail** if the supplied `CHROME_VERSION` in Dockerfile does not correspond w/ the latest version in this list.
 * To prevent an issue where Chrome tests fail to start in an unprivileged docker container the sandbox feature of Chrome is turned off by default.
 * A list w/ available versions of Chrome WebDriver can be found [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). Ensure the version used is compatible w/ the Google Chrome version.
+
+#### wkhtmltopdf
+The latest stable version of wkhtmltopdf is installed (currently v0.12.5.1)
