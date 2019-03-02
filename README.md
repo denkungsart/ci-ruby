@@ -1,25 +1,31 @@
+This Docker image is used in development and testing environments. It aims at mirroring our production setup as close as possible. The image is based on the heroku-18 stack image (see https://devcenter.heroku.com/articles/stack-packages)
+
 ## How to build this image
 
-* Builds will happen automatically on pushes
-* The Dockerfile is expected to be located at the root folder
-* Docker tag names will be the same as the name of the branch
-* Use the supplied build shell script to build an image locally
+* As soon as a new commit is pushed to GitHub the image will automatically build using Docker Hub's infrastructure. The build status can be monitored [here](https://hub.docker.com/r/aventurini/ci-ruby/builds).
+* Docker tag names will be derived from the name of the branch
+* To build the image locally the supplied build shell script can be used
 
 ## Included dependencies
 
-#### Node.js
+### Node.js
 
-Node.js 10 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). You can install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 7.x`.
+By default Node.js 11 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). Install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 10.x`.
 
-#### PhantomJS
+### Ruby
 
-PhantomJS 2.1.1 static binary obtained from [https://bitbucket.org/ariya/phantomjs/downloads](https://bitbucket.org/ariya/phantomjs/downloads) will be install at `/usr/local/bin/`. You can install a different version by declaring it in the Dockerfile before the install-phantomjs script is called, e.g. `ENV PHANTOMJS_VERSION 1.9.8`.
+By default Ruby 2.5.3 will be installed. Install a different version by declaring it in the Dockerfile before the install-ruby script is called, e.g. `ENV RUBY_VERSION 2.6.2`.
 
-#### Google Chrome
+### Google Chrome
 
 * The currently available version for the Google Chrome stable package can be found [in the Google Chrome PPA list](https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable). Note that the build **will fail** if the supplied `CHROME_VERSION` in Dockerfile does not correspond w/ the latest version in this list.
 * To prevent an issue where Chrome tests fail to start in an unprivileged docker container the sandbox feature of Chrome is turned off by default.
 * A list w/ available versions of Chrome WebDriver can be found [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). Ensure the version used is compatible w/ the Google Chrome version.
 
-#### wkhtmltopdf
+### Yarn
+
+The latest stable version of yarn is installed via the Debian package repository as described [here](https://yarnpkg.com/lang/en/docs/install/#debian-stable)
+
+### wkhtmltopdf
+
 The latest stable version of wkhtmltopdf is installed (currently v0.12.5.1)

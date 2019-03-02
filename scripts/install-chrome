@@ -1,8 +1,8 @@
 #!/bin/bash
 set -xeo pipefail
 
-CHROME_VERSION=${1:-69.0.3497.100-1}
-CHROME_DRIVER_VERSION=${2:-2.42}
+CHROME_VERSION=${1:-72.0.3626.121-1}
+CHROME_DRIVER_VERSION=${2:-2.46}
 
 curl -sS -L https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list

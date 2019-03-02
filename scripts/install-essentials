@@ -2,8 +2,9 @@
 set -xeo pipefail
 
 apt-get update
-apt-get install -y postgresql-client \
-    unzip
+
+# psql required for database creation in test env
+apt-get install -y postgresql-client
 
 # cmake required for building of libgit2 and pronto
 apt-get install -y cmake
