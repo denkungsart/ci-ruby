@@ -1,4 +1,4 @@
-FROM ruby:2.5.3
+FROM ruby:2.5.5
 
 # build essentials
 COPY scripts/install-essentials /tmp/install-essentials
@@ -9,16 +9,14 @@ COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
 # Chrome
+ENV CHROME_VERSION 74.0.3729.131-1
+ENV CHROME_DRIVER_VERSION 74.0.3729.6
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
 # Yarn
 COPY scripts/install-yarn /tmp/install-yarn
 RUN /tmp/install-yarn && yarn --version
-
-# wkhtmltopdf
-COPY scripts/install-wkhtmltopdf /tmp/install-wkhtmltopdf
-RUN /tmp/install-wkhtmltopdf && wkhtmltopdf --version
 
 # Linter dependencies
 RUN gem install bundler-audit \
