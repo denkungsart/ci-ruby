@@ -33,3 +33,7 @@ RUN gem install bundler-audit \
 RUN apt-get purge -y --auto-remove \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Set locale to UTF-8
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
