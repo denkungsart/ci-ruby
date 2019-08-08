@@ -18,6 +18,10 @@ RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome 
 COPY scripts/install-yarn /tmp/install-yarn
 RUN /tmp/install-yarn && yarn --version
 
+# wkhtmltopdf
+COPY scripts/install-wkhtmltopdf /tmp/install-wkhtmltopdf
+RUN /tmp/install-wkhtmltopdf && wkhtmltopdf --version
+
 # Linter dependencies
 RUN gem install bundler-audit \
   && gem install pronto -v 0.10.0 \
