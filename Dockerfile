@@ -1,4 +1,4 @@
-FROM ruby:2.6.3
+FROM ruby:2.6.5
 
 # build essentials
 COPY scripts/install-essentials /tmp/install-essentials
