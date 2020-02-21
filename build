@@ -9,4 +9,4 @@ TAG=2.6.5-node-chrome-yarn-wkhtmltopdf
 
 NAME=aventurini/ci-ruby:"$TAG"
 
-docker build -t "$NAME" .
+docker build -t "$NAME" . &> logs/"$(date +%F)"-"$(date +%T)".log
