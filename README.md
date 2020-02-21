@@ -12,10 +12,6 @@ This Docker image is used in development and testing environments. It aims at mi
 
 By default Node.js 11 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). Install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 10.x`.
 
-### Ruby
-
-By default Ruby 2.5.3 will be installed. Install a different version by declaring it in the Dockerfile before the install-ruby script is called, e.g. `ENV RUBY_VERSION 2.6.2`.
-
 ### Google Chrome
 
 * The currently available version for the Google Chrome stable package can be found [in the Google Chrome PPA list](https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable). Note that the build **will fail** if the supplied `CHROME_VERSION` in Dockerfile does not correspond w/ the latest version in this list.
@@ -29,3 +25,7 @@ The latest stable version of yarn is installed via the Debian package repository
 ### wkhtmltopdf
 
 The latest stable version of wkhtmltopdf is installed (currently v0.12.5.1)
+
+### ImageMagick
+
+As the internal ImageMagick SVG renderer is not fully compliant with the specification we build ImageMagick 6.9 Q16 from source w/ libRSVG support. Check https://www.imagemagick.org/download/ for available versions.

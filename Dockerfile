@@ -22,6 +22,10 @@ RUN /tmp/install-yarn && yarn --version
 COPY scripts/install-wkhtmltopdf /tmp/install-wkhtmltopdf
 RUN /tmp/install-wkhtmltopdf && wkhtmltopdf --version
 
+# ImageMagick
+COPY scripts/install-imagemagick /tmp/install-imagemagick
+RUN /tmp/install-imagemagick && identify -version && identify -list configure
+
 # Linter dependencies
 RUN gem install bundler-audit \
   && gem install pronto -v 0.10.0 \

@@ -1,0 +1,15 @@
+#!/bin/bash
+set -xeo pipefail
+
+IMAGEMAGICK_VERSION=${1:-6.9.10-95}
+
+# ref http://www.imagemagick.org/script/advanced-unix-installation.php
+wget "https://www.imagemagick.org/download/ImageMagick-${IMAGEMAGICK_VERSION}.tar.gz"
+tar xvzf "ImageMagick-${IMAGEMAGICK_VERSION}.tar.gz"
+(
+cd "ImageMagick-${IMAGEMAGICK_VERSION}/"
+./configure --with-rsvg=yes
+make
+make install
+ldconfig /usr/local/lib
+)
