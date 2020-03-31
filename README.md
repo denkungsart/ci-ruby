@@ -28,4 +28,4 @@ The latest stable version of wkhtmltopdf is installed (currently v0.12.5.1)
 
 ### ImageMagick
 
-As the internal ImageMagick SVG renderer is not fully compliant with the specification we build ImageMagick 6.9 Q16 from source w/ libRSVG support. Check https://www.imagemagick.org/download/ for available versions.
+As the internal ImageMagick SVG renderer is not fully compliant with the specification we build ImageMagick 6.9 Q16 from source w/ libRSVG support. Check https://www.imagemagick.org/download/ for available versions (only the latest dot release will be available at this link).
