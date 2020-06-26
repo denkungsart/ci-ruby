@@ -9,8 +9,8 @@ COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
 # Chrome
-ENV CHROME_VERSION 80.0.3987.162-1
-ENV CHROME_DRIVER_VERSION 80.0.3987.106
+ENV CHROME_VERSION 83.0.4103.116-1
+ENV CHROME_DRIVER_VERSION 83.0.4103.39
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
@@ -36,6 +36,10 @@ RUN gem install bundler-audit \
   && gem install pronto-rubocop -v 0.10.0 \
   # && gem install pronto-rails_schema \ TODO: not yet compatible w/ pronto 0.10
   && gem install pronto-scss -v 0.10.0
+
+# Install bundler 2 & RubyGems
+RUN gem install bundler
+RUN gem update --system
 
 # Clean up apt and tmp folders
 RUN apt-get purge -y --auto-remove \
