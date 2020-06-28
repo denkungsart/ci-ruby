@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xeo pipefail
 
-NODE_VERSION=${1:-13.x}
+NODE_VERSION=${1:-14.x}
 
 # ref https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions
 curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | bash -
