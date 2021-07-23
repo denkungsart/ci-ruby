@@ -9,7 +9,8 @@ apt-get install -y postgresql-client
 # cmake required for building of libgit2 and pronto
 apt-get install -y cmake
 
-# Watermarking dependencies for pdf files
+# Tools for transforming and inspecting PDF files
 apt-get install -y \
     pdftk \
-    ghostscript
+    ghostscript \
+    qpdf
