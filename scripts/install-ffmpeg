@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# set -e: don't tolerate non-zero exit status for any command
+set -e
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Install ffmpeg"
+BUILD_DIR="/usr/local/bin"
+DOWNLOAD_URL="https://s3-eu-west-1.amazonaws.com/denkungsart/ffmpeg-release-64bit-static.tar.xz"
+echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
+cd $BUILD_DIR || exit
+curl -L --silent $DOWNLOAD_URL | tar xJ --strip-components=1
