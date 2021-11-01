@@ -1,4 +1,4 @@
-FROM ruby:3.0.2
+FROM ruby:3.0.2-buster
 
 # build essentials
 COPY scripts/install-essentials /tmp/install-essentials

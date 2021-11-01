@@ -1,4 +1,4 @@
-This Docker image is used in development and testing environments. It aims at mirroring our production setup as close as possible. The image is based on the heroku-18 stack image (see https://devcenter.heroku.com/articles/stack-packages)
+This Docker image is used in development and testing environments. It aims at mirroring our production setup as close as possible. The image is based on Debian buster (see https://github.com/docker-library/ruby/blob/master/3.0/buster/Dockerfile)
 
 ## How to build this image
 
