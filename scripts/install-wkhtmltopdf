@@ -5,6 +5,7 @@ WKHTMLTOPDF_MAJOR_VERSION=${1:-0.12.5}
 WKHTMLTOPDF_MINOR_VERSION=${1:-0.12.5-1}
 
 # download release from GitHub
+apt-get update
 apt-get install -y xfonts-75dpi xfonts-base
-wget "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/$WKHTMLTOPDF_MAJOR_VERSION/wkhtmltox_$WKHTMLTOPDF_MINOR_VERSION.stretch_amd64.deb"
-dpkg -i "wkhtmltox_$WKHTMLTOPDF_MINOR_VERSION.stretch_amd64.deb"
+wget "https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/$WKHTMLTOPDF_MAJOR_VERSION/wkhtmltox_$WKHTMLTOPDF_MINOR_VERSION.buster_amd64.deb"
+dpkg -i "wkhtmltox_$WKHTMLTOPDF_MINOR_VERSION.buster_amd64.deb"

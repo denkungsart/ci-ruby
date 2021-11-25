@@ -1,4 +1,4 @@
-FROM ruby:3.0.2
+FROM ruby:2.7.5-bullseye
 
 # build essentials
 COPY scripts/install-essentials /tmp/install-essentials
@@ -9,8 +9,8 @@ COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
 # Chrome
-ENV CHROME_VERSION 94.0.4606.71-1
-ENV CHROME_DRIVER_VERSION 92.0.4515.43
+ENV CHROME_VERSION 96.0.4664.45-1
+ENV CHROME_DRIVER_VERSION 96.0.4664.45
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
