@@ -9,8 +9,8 @@ COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
 # Chrome
-ENV CHROME_VERSION 96.0.4664.45-1
-ENV CHROME_DRIVER_VERSION 96.0.4664.45
+ENV CHROME_VERSION 97.0.4692.99-1
+ENV CHROME_DRIVER_VERSION 97.0.4692.71
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 

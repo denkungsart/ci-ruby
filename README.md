@@ -16,7 +16,7 @@ By default Node.js 14 will be installed via package manager as per the [official
 
 * The currently available version for the Google Chrome stable package can be found [in the Google Chrome PPA list](https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable). Note that the build **will fail** if the supplied `CHROME_VERSION` in Dockerfile does not correspond w/ the latest version in this list.
 * To prevent an issue where Chrome tests fail to start in an unprivileged docker container the sandbox feature of Chrome is turned off by default.
-* A list w/ available versions of Chrome WebDriver can be found [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). Ensure the version used is compatible w/ the Google Chrome version.
+* A list w/ available versions of Chrome WebDriver can be found [here](https://sites.google.com/chromium.org/driver/). Ensure the version used is compatible w/ the Google Chrome version.
 
 ### Yarn
 
