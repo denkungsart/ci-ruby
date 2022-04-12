@@ -10,7 +10,7 @@ This Docker image is used in development and testing environments. It aims at mi
 
 ### Node.js
 
-By default Node.js 14 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). Install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 10.x`.
+By default Node.js 17 will be installed via package manager as per the [official guidelines](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). Install a different version by declaring it in the Dockerfile before the install-node script is called, e.g. `ENV NODE_VERSION 10.x`.
 
 ### Google Chrome
 
@@ -20,7 +20,7 @@ By default Node.js 14 will be installed via package manager as per the [official
 
 ### Yarn 2
 
-The latest version of Yarn 2 (berry) is installed via [npm](https://yarnpkg.com/getting-started/install)
+The latest version of Yarn 2+ (berry) is installed via [npm](https://yarnpkg.com/getting-started/install)
 
 ### wkhtmltopdf
 
@@ -28,4 +28,4 @@ The latest stable version of wkhtmltopdf is installed (currently v0.12.5.1)
 
 ### ImageMagick
 
-As the internal ImageMagick SVG renderer is not fully compliant with the specification we build ImageMagick 6.9 Q16 from source w/ libRSVG support. Check https://www.imagemagick.org/download/ for available versions (only the latest dot release will be available at this link).
+As the internal ImageMagick SVG renderer is not fully compliant with the specification we build ImageMagick from source w/ libRSVG support. Check https://www.imagemagick.org/download/ for available versions (only the latest dot release will be available at this link).
