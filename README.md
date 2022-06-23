@@ -24,7 +24,7 @@ The latest version of Yarn 2+ (berry) is installed via [npm](https://yarnpkg.com
 
 ### wkhtmltopdf
 
-The latest stable version of wkhtmltopdf is installed (currently v0.12.5.1)
+The latest stable version of wkhtmltopdf is installed (currently v0.12.6.1)
 
 ### ImageMagick
 

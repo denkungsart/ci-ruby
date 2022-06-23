@@ -9,8 +9,8 @@ COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
 # Chrome
-ENV CHROME_VERSION 102.0.5005.115-1
-ENV CHROME_DRIVER_VERSION 102.0.5005.61
+ENV CHROME_VERSION 103.0.5060.53-1
+ENV CHROME_DRIVER_VERSION 103.0.5060.53
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
@@ -30,7 +30,7 @@ RUN /tmp/install-imagemagick && identify -version && identify -list configure
 COPY scripts/install-ffmpeg /tmp/install-ffmpeg
 RUN /tmp/install-ffmpeg && ffmpeg -version
 
-# Install bundler 2 & RubyGems
+# Install latest bundler & RubyGems
 RUN gem install bundler
 RUN gem update --system
 
