@@ -1,4 +1,4 @@
-FROM ruby:2.7.5-bullseye
+FROM ruby:2.7.6-bullseye
 
 # build essentials
 COPY scripts/install-essentials /tmp/install-essentials
