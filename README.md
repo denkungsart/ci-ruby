@@ -18,9 +18,9 @@ By default Node.js 16 will be installed via package manager as per the [official
 * To prevent an issue where Chrome tests fail to start in an unprivileged docker container the sandbox feature of Chrome is turned off by default.
 * A list w/ available versions of Chrome WebDriver can be found [here](https://sites.google.com/chromium.org/driver/). Ensure the version used is compatible w/ the Google Chrome version.
 
-### Yarn
+### Yarn 2
 
-The latest stable version of yarn is installed via the Debian package repository as described [here](https://yarnpkg.com/lang/en/docs/install/#debian-stable)
+The latest stable version of Yarn 2+ (berry) is installed via [npm](https://yarnpkg.com/getting-started/install)
 
 ### wkhtmltopdf
 
