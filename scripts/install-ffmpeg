@@ -51,6 +51,7 @@ fi
 
 rm $FFMPEG_ARCHIVE_NAME
 
+mv ffprobe /usr/local/bin
 mv ffmpeg /usr/local/bin
 
 echo "Installation successful" | output

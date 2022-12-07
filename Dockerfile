@@ -9,8 +9,8 @@ COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
 # Chrome
-ENV CHROME_VERSION 107.0.5304.121-1
-ENV CHROME_DRIVER_VERSION 107.0.5304.62
+ENV CHROME_VERSION 108.0.5359.94-1
+ENV CHROME_DRIVER_VERSION 108.0.5359.71
 COPY scripts/install-chrome /tmp/install-chrome
 RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
 
@@ -29,7 +29,7 @@ RUN /tmp/install-imagemagick && identify -version && identify -list configure
 # FFmpeg
 ENV FFMPEG_DOWNLOAD_URL https://denkungsart.s3.eu-west-1.amazonaws.com/ffmpeg-git-amd64-static.tar.xz
 COPY scripts/install-ffmpeg /tmp/install-ffmpeg
-RUN /tmp/install-ffmpeg && ffmpeg -version
+RUN /tmp/install-ffmpeg && ffmpeg -version && ffprobe -version
 
 # Install bundler 2 & RubyGems
 RUN gem install bundler
