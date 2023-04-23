@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xeo pipefail
 
-IMAGEMAGICK_VERSION=${1:-7.1.0-53}
+IMAGEMAGICK_VERSION=${1:-7.1.1-8}
 
 # ref https://imagemagick.org/script/install-source.php
 wget "https://imagemagick.org/archive/ImageMagick.tar.gz"
