@@ -1,4 +1,5 @@
 FROM ruby:3.2.2-bullseye
+ARG TARGETPLATFORM
 
 # build essentials
 COPY scripts/install-essentials /tmp/install-essentials
@@ -27,7 +28,6 @@ COPY scripts/install-imagemagick /tmp/install-imagemagick
 RUN /tmp/install-imagemagick && identify -version && identify -list configure
 
 # FFmpeg
-ENV FFMPEG_DOWNLOAD_URL https://denkungsart.s3.eu-west-1.amazonaws.com/ffmpeg-git-amd64-static.tar.xz
 COPY scripts/install-ffmpeg /tmp/install-ffmpeg
 RUN /tmp/install-ffmpeg && ffmpeg -version && ffprobe -version
 

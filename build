@@ -9,4 +9,8 @@ TAG=3.2.2-chrome-112-node-yarn-berry-wkhtmltopdf-ffmpeg
 
 NAME=ghcr.io/denkungsart/ci-ruby:"$TAG"
 
-docker build -t "$NAME" . &> logs/"$(date +%F)"-"$(date +%T)".log
+# docker buildx create --use --platform=linux/arm64,linux/amd64 --name multi-platform-builder
+docker buildx build \
+  --platform linux/amd64 \
+  --output type=docker \
+  --tag "$NAME" . &> logs/"$(date +%F)"-"$(date +%T)".log
