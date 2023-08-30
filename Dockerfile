@@ -21,10 +21,6 @@ RUN /tmp/install-yarn && yarn --version
 COPY scripts/install-wkhtmltopdf /tmp/install-wkhtmltopdf
 RUN /tmp/install-wkhtmltopdf && wkhtmltopdf --version
 
-# ImageMagick
-COPY scripts/install-imagemagick /tmp/install-imagemagick
-RUN /tmp/install-imagemagick && identify -version && identify -list configure
-
 # FFmpeg
 COPY scripts/install-ffmpeg /tmp/install-ffmpeg
 RUN /tmp/install-ffmpeg && ffmpeg -version && ffprobe -version
