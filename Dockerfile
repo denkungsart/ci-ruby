@@ -9,11 +9,9 @@ RUN /tmp/install-essentials
 COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
-# Chrome
-ENV CHROME_VERSION 112.0.5615.165-1
-ENV CHROME_DRIVER_VERSION 112.0.5615.49
-COPY scripts/install-chrome /tmp/install-chrome
-RUN /tmp/install-chrome $CHROME_VERSION $CHROME_DRIVER_VERSION && google-chrome --version
+# Chrome, ref https://developer.chrome.com/blog/chrome-for-testing/#how-can-i-get-chrome-for-testing-binaries
+RUN npx @puppeteer/browsers install chrome@stable
+RUN npx @puppeteer/browsers install chromedriver@stable
 
 # Yarn
 COPY scripts/install-yarn /tmp/install-yarn
