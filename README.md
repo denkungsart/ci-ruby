@@ -23,7 +23,3 @@ The latest version of Yarn 2+ (berry) is installed via [npm](https://yarnpkg.com
 ### wkhtmltopdf
 
 The latest stable version of wkhtmltopdf is installed (currently v0.12.6.1)
-
-### ImageMagick
-
-As the internal ImageMagick SVG renderer is not fully compliant with the specification we build ImageMagick from source w/ libRSVG support. Check https://imagemagick.org/ for the latest release version.
