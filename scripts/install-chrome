@@ -1,22 +1,16 @@
-#!/bin/bash
-set -xeo pipefail
+#!/usr/bin/env bash
 
-CHROME_VERSION=${1:-72.0.3626.121-1}
-CHROME_DRIVER_VERSION=${2:-2.46}
+CHROME_VERSION="116.0.5845.96"
 
-curl -sS -L https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list
+if [[ $TARGETPLATFORM == "linux/amd64" ]]; then
+  # ref https://developer.chrome.com/blog/chrome-for-testing/#how-can-i-get-chrome-for-testing-binaries
+  npx @puppeteer/browsers install chrome@stable
+  npx @puppeteer/browsers install chromedriver@stable
 
-apt-get update -q
-env DEBIAN_FRONTEND="noninteractive" apt-get install -y google-chrome-stable=$CHROME_VERSION
+  mv "/chrome/linux-$CHROME_VERSION/chrome-linux64/chrome" /usr/local/bin
+  mv "/chromedriver/linux-$CHROME_VERSION/chromedriver-linux64/chromedriver" /usr/local/bin
 
-# disable sandbox feature by default to prevent an issue where Chrome tests fail to start in an unprivileged docker container, ref https://discuss.circleci.com/t/running-browser-tests/10998/7
-sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox --no-sandbox|g' \
-  "/opt/google/chrome/google-chrome"
-
-rm -rf /var/lib/apt/lists/*
-
-# Install ChromeDriver
-wget -q "https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
-unzip chromedriver_linux64.zip -d /usr/local/bin
-rm -f chromedriver_linux64.zip
+  chrome --version && chromedriver --version
+else
+  echo "Chromium currently does not provide arm64 binaries for Linux"
+fi
