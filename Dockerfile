@@ -9,10 +9,6 @@ RUN /tmp/install-essentials
 COPY scripts/install-node /tmp/install-node
 RUN /tmp/install-node && node --version
 
-# Chrome, ref https://developer.chrome.com/blog/chrome-for-testing/#how-can-i-get-chrome-for-testing-binaries
-RUN npx @puppeteer/browsers install chrome@stable
-RUN npx @puppeteer/browsers install chromedriver@stable
-
 # Yarn
 COPY scripts/install-yarn /tmp/install-yarn
 RUN /tmp/install-yarn && yarn --version
