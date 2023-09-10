@@ -22,7 +22,7 @@ The latest version of Yarn 2+ (berry) is installed via [Corepack](https://yarnpk
 
 ### wkhtmltopdf
 
-The latest stable version of wkhtmltopdf is installed (currently v0.12.6.1)
+The latest stable version of wkhtmltopdf is installed from https://github.com/wkhtmltopdf/packaging/releases
 
 ### FFmpeg
 
