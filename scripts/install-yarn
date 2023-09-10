@@ -1,5 +1,6 @@
 #!/bin/bash
 set -xeo pipefail
 
-npm install -g yarn
-yarn set version berry
+# https://yarnpkg.com/getting-started/install
+corepack enable
+yarn set version stable
