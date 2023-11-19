@@ -6,8 +6,8 @@ apt-get update
 # psql required for database creation in test env
 apt-get install -y postgresql-client
 
-# cmake required for building of libgit2 and pronto
-apt-get install -y cmake
+# image processing
+apt-get install -y libvips42
 
 # Tools for transforming and inspecting PDF files
 apt-get install -y \
