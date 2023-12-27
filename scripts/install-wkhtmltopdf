@@ -6,7 +6,7 @@ apt-get install -y xfonts-75dpi xfonts-base
 
 # ref https://github.com/wkhtmltopdf/packaging/releases
 WKHTMLTOPDF_RELEASE_VERSION="0.12.6.1-3"
-WKHTMLTOPDF_BINARY="wkhtmltox_${WKHTMLTOPDF_RELEASE_VERSION}.bullseye_${TARGETPLATFORM#*/}.deb"
+WKHTMLTOPDF_BINARY="wkhtmltox_${WKHTMLTOPDF_RELEASE_VERSION}.bookworm_${TARGETPLATFORM#*/}.deb"
 
 wget "https://github.com/wkhtmltopdf/packaging/releases/download/${WKHTMLTOPDF_RELEASE_VERSION}/${WKHTMLTOPDF_BINARY}"
 dpkg -i "${WKHTMLTOPDF_BINARY}"
