@@ -22,4 +22,4 @@ The latest stable version of wkhtmltopdf is installed from https://github.com/wk
 
 ### FFmpeg
 
-We use static builds from https://johnvansickle.com/ffmpeg/. The latest built from git master is installed.
+The latest official ffmpeg package for Debian is istalled <https://packages.debian.org/bookworm/ffmpeg>
