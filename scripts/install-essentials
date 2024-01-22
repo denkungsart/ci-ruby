@@ -12,5 +12,12 @@ apt-get install -y libvips42
 # Tools for transforming and inspecting PDF files
 apt-get install -y \
     pdftk \
-    ghostscript \
-    qpdf
+    ghostscript
+
+# Install qpdf 10.x
+curl -o "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" "https://ftp.debian.org/debian/pool/main/q/qpdf/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
+  && dpkg -i "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
+  && rm "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb"
+curl -o "/tmp/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb" "https://ftp.debian.org/debian/pool/main/q/qpdf/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
+  && dpkg -i "/tmp/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
+  && rm "/tmp/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb"
