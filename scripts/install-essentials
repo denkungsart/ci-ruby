@@ -9,6 +9,9 @@ apt-get install -y postgresql-client
 # image processing
 apt-get install -y libvips42
 
+# required by https://circleci.com/developer/orbs/orb/circleci/browser-tools
+apt-get install -y jq
+
 # Tools for transforming and inspecting PDF files
 apt-get install -y \
     pdftk \
