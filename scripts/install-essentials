@@ -15,7 +15,8 @@ apt-get install -y jq
 # Tools for transforming and inspecting PDF files
 apt-get install -y \
     pdftk \
-    ghostscript
+    ghostscript \
+    poppler-utils
 
 # Install qpdf 10.x
 curl -o "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" "https://ftp.debian.org/debian/pool/main/q/qpdf/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
