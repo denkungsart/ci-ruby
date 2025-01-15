@@ -16,12 +16,5 @@ apt-get install -y jq
 apt-get install -y \
     pdftk \
     ghostscript \
+    qpdf \
     poppler-utils
-
-# Install qpdf 10.x
-curl -o "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" "https://ftp.debian.org/debian/pool/main/q/qpdf/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
-  && dpkg -i "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
-  && rm "/tmp/libqpdf28_10.1.0-1_${TARGETPLATFORM#*/}.deb"
-curl -o "/tmp/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb" "https://ftp.debian.org/debian/pool/main/q/qpdf/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
-  && dpkg -i "/tmp/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb" \
-  && rm "/tmp/qpdf_10.1.0-1_${TARGETPLATFORM#*/}.deb"
